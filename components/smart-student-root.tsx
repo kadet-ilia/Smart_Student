@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useCallback, useRef, useState } from "react";
 import { StudentAppRestored } from "@/components/student-app-restored";
+import { CourseSidebarHierarchy } from "@/components/course-sidebar-hierarchy";
 
 const assets = [
   ["math-curriculum", "/legacy/math-curriculum-v3.js"],
@@ -25,5 +26,6 @@ export function SmartStudentRoot() {
   return <>
     {assets.map(([id, src]) => <Script key={id} id={`smart-student-${id}`} src={src} strategy="afterInteractive" onReady={() => markReady(id)} />)}
     <StudentAppRestored assetsReady={assetsReady} />
+    <CourseSidebarHierarchy />
   </>;
 }
