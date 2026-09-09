@@ -3,4 +3,7 @@
 .DS_Store
 Thumbs.db
 .vercel/
+.next/
 node_modules/
+*.tsbuildinfo
+supabase/.temp/
