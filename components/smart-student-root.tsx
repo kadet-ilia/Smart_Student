@@ -5,10 +5,12 @@ import { useCallback, useRef, useState } from "react";
 import { StudentApp } from "@/components/student-app";
 
 const assets = [
-  ["curriculum", "/legacy/math-curriculum-v3.js"],
-  ["grade4", "/legacy/math-gen4-v3.js"],
-  ["grade5", "/legacy/math-gen5-v3.js"],
-  ["generators", "/legacy/math-generators-v3.js"],
+  ["math-curriculum", "/legacy/math-curriculum-v3.js"],
+  ["math-grade4", "/legacy/math-gen4-v3.js"],
+  ["math-grade5", "/legacy/math-gen5-v3.js"],
+  ["math-generators", "/legacy/math-generators-v3.js"],
+  ["russian-curriculum", "/legacy/russian-curriculum-v4.js"],
+  ["russian-generators", "/legacy/russian-generators-v4.js"],
 ] as const;
 
 export function SmartStudentRoot() {
