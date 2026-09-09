@@ -6,6 +6,7 @@ import { StudentAppRestored } from "@/components/student-app-restored";
 
 const assets = [
   ["math-curriculum", "/legacy/math-curriculum-v3.js"],
+  ["math-titles", "/legacy/math-title-normalizer.js"],
   ["math-grade4", "/legacy/math-gen4-v3.js"],
   ["math-grade5", "/legacy/math-gen5-v3.js"],
   ["math-generators", "/legacy/math-generators-v3.js"],
