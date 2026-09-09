@@ -102,7 +102,7 @@ export function CourseSidebarHierarchy() {
     <div className="course-hierarchy" aria-label="Предметы и классы">
       <div className="course-hierarchy-title">Учебные курсы</div>
       {SUBJECTS.map(({ id, label, icon: Icon }) => (
-        <section className={`course-subject ${active.subject === id ? "active" : ""}`} key={id}>
+        <section className={`course-subject course-subject-${id} ${active.subject === id ? "active" : ""}`} key={id}>
           <div className="course-subject-title">
             <span className="course-subject-icon"><Icon size={19} weight="bold" /></span>
             <span>{label}</span>
@@ -112,6 +112,8 @@ export function CourseSidebarHierarchy() {
               <button
                 key={courseGrade}
                 type="button"
+                data-grade={`${courseGrade}`}
+                aria-current={active.subject === id && active.grade === courseGrade ? "page" : undefined}
                 className={`course-grade ${active.subject === id && active.grade === courseGrade ? "active" : ""}`}
                 onClick={() => openCourse(id, courseGrade)}
               >
@@ -129,13 +131,15 @@ export function CourseSidebarHierarchy() {
         .course-subject.active{background:rgba(70,108,255,.055)}
         .course-subject-title{display:flex;align-items:center;gap:9px;padding:3px 5px;font-size:13px;font-weight:800;color:#26354b}
         .course-subject-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#edf2ff;color:#5068dc}
-        .course-subject:nth-of-type(3) .course-subject-icon{background:#f2ebff;color:#7654c7}
+        .course-subject-russian .course-subject-icon{background:#f2ebff;color:#7654c7}
         .course-grade-list{display:grid;gap:3px;padding-left:35px}
         .course-grade{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;border:0;background:transparent;padding:7px 10px;border-radius:9px;color:#6c788c;font:inherit;font-size:12px;font-weight:700;text-align:left;cursor:pointer;transition:background .16s ease,color .16s ease,transform .16s ease}
         .course-grade:hover{background:rgba(70,108,255,.07);color:#3e55b8;transform:translateX(1px)}
         .course-grade.active{background:#e9efff;color:#4058c8}
+        .course-subject-russian .course-grade.active{background:#f1ebff;color:#6847b7}
         .course-grade-dot{width:6px;height:6px;border-radius:50%;background:transparent}
         .course-grade.active .course-grade-dot{background:#5b70e8;box-shadow:0 0 0 3px rgba(91,112,232,.14)}
+        .course-subject-russian .course-grade.active .course-grade-dot{background:#7a5acb;box-shadow:0 0 0 3px rgba(122,90,203,.14)}
         @media(max-width:900px){.course-hierarchy{padding-left:5px;padding-right:5px}.course-hierarchy-title,.course-subject-title>span:last-child,.course-grade span:first-child{font-size:0}.course-subject-title{justify-content:center}.course-grade-list{padding-left:0}.course-grade{justify-content:center;padding:8px 4px}.course-grade::before{content:attr(data-grade);font-size:12px}.course-grade-dot{display:none}}
       `}</style>
     </div>,
