@@ -1,0 +1,19 @@
+/* Brand v1 — primary visual identity for «Умный ученик». */
+:root{--brand-blue:#126cf5;--brand-cyan:#24d8ff;--brand-navy:#07388d}
+.brand-logo-lockup{user-select:none}
+.logo .mark{padding:0;background:transparent!important;color:transparent;overflow:visible;border-radius:50%;box-shadow:0 5px 18px rgba(16,110,245,.2)}
+.brand-logo-img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;filter:saturate(1.03);transform:translateZ(0)}
+.side>.logo{gap:12px;cursor:pointer;margin-bottom:22px}
+.side>.logo .mark{width:48px;height:48px;flex:0 0 48px;box-shadow:0 7px 22px rgba(18,108,245,.24),0 0 0 1px rgba(36,216,255,.22)}
+.side>.logo span{letter-spacing:-.25px}
+.login>.logo.brand-login{justify-content:center;flex-direction:column;text-align:center;gap:10px;margin:0 0 20px}
+.login>.logo.brand-login .mark{width:104px;height:104px;box-shadow:0 14px 38px rgba(18,108,245,.26),0 0 0 2px rgba(36,216,255,.2)}
+.login>.logo.brand-login span{font-size:27px;line-height:1.05;letter-spacing:-.7px;background:linear-gradient(100deg,var(--brand-navy),var(--brand-blue) 55%,#0ba8d7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.login>.logo.brand-login:after{content:'Интерактивное обучение с адаптивной сложностью';max-width:330px;font-size:12px;line-height:1.35;font-weight:700;letter-spacing:.15px;color:#6c7896}
+.welcome{position:relative;overflow:hidden}
+.brand-hero-logo{position:absolute;right:26px;top:50%;transform:translateY(-50%);width:124px;height:124px;border-radius:50%;filter:drop-shadow(0 12px 24px rgba(20,105,235,.18));pointer-events:none}
+.brand-hero-logo img{display:block;width:100%;height:100%;border-radius:50%}
+.welcome:has(.brand-hero-logo){padding-right:175px}
+.brand-tech-line{height:2px;width:56px;margin:7px auto 0;border-radius:99px;background:linear-gradient(90deg,transparent,var(--brand-cyan),transparent);opacity:.8}
+@media(max-width:1000px){.side>.logo .mark{width:44px;height:44px;flex-basis:44px}.side>.logo{justify-content:center;margin-left:0;margin-right:0}.brand-hero-logo{width:108px;height:108px}.welcome:has(.brand-hero-logo){padding-right:150px}}
+@media(max-width:700px){.login>.logo.brand-login .mark{width:92px;height:92px}.login>.logo.brand-login span{font-size:24px}.welcome:has(.brand-hero-logo){padding-right:20px}.brand-hero-logo{position:static;transform:none;width:88px;height:88px;margin:18px auto 0}.side>.logo{display:none}}
